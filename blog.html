@@ -1,1113 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-<meta charset="UTF-8">
+
+<title>Blog | Subir Goswami</title>
+
+<meta name="description" content="Articles by Subir Goswami about storytelling, artificial intelligence, business, and creativity.">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Writing & Thoughts — Subir Goswami | AI, Storytelling & Kolkata</title>
-<meta name="description" content="Essays, reflections and ideas by Subir Goswami — exploring artificial intelligence, literary storytelling, and the soul of Kolkata. Written from the banks of the Hooghly.">
-<meta name="keywords" content="Subir Goswami Blog, AI Essays India, Kolkata Writing, Storytelling AI, Bengali Author Articles, KaliNova AI Insights, Creative Writing Kolkata">
-<meta name="author" content="Subir Goswami">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://subirgoswami.github.io/blog.html">
-
-<meta property="og:type" content="blog">
-<meta property="og:url" content="https://subirgoswami.github.io/blog.html">
-<meta property="og:title" content="Writing & Thoughts — Subir Goswami">
-<meta property="og:description" content="Essays on AI, literary storytelling, and the soul of Kolkata by Subir Goswami.">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Writing & Thoughts — Subir Goswami">
-<meta name="twitter:description" content="Essays on AI, storytelling, and Kolkata by author and AI entrepreneur Subir Goswami.">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  "name": "Writing & Thoughts by Subir Goswami",
-  "url": "https://subirgoswami.github.io/blog.html",
-  "author": {
-    "@type": "Person",
-    "name": "Subir Goswami",
-    "url": "https://subirgoswami.github.io/"
-  },
-  "description": "Essays on artificial intelligence, literary storytelling, and the soul of Kolkata.",
-  "inLanguage": "en"
-}
-</script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
-
 <style>
-/* ═══════════════════════════════════════
-   DESIGN SYSTEM — INK & GOLD EDITORIAL
-   ═══════════════════════════════════════ */
-:root {
-  --ink:        #0e0c0a;
-  --paper:      #f5f0e8;
-  --cream:      #faf7f2;
-  --gold:       #c9a84c;
-  --gold-lt:    #e8c96a;
-  --gold-dim:   rgba(201,168,76,0.14);
-  --muted:      #6b6560;
-  --muted-lt:   #9e9892;
-  --border:     rgba(14,12,10,0.09);
-  --serif:      'Playfair Display', Georgia, serif;
-  --body:       'Crimson Pro', Georgia, serif;
-  --mono:       'DM Mono', monospace;
 
-  /* Categories */
-  --cat-ai:     #2d6a8f;
-  --cat-story:  #7a3b1e;
-  --cat-kol:    #3a6b45;
-  --cat-life:   #5c3d7a;
+body{
+font-family:Arial, sans-serif;
+margin:0;
+background:#f5f5f5;
 }
 
-*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body { background:var(--cream); color:var(--ink); font-family:var(--body); font-size:1.1rem; line-height:1.75; overflow-x:hidden; }
-::-webkit-scrollbar { width:4px; }
-::-webkit-scrollbar-track { background:var(--paper); }
-::-webkit-scrollbar-thumb { background:var(--gold); }
-::selection { background:var(--gold); color:var(--ink); }
-
-/* Grain */
-body::before {
-  content:''; position:fixed; inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events:none; z-index:9999; opacity:0.4;
+header{
+background:#111;
+color:white;
+padding:20px;
+text-align:center;
 }
 
-/* ═══ NAV ═══ */
-nav {
-  position:fixed; top:0; left:0; right:0; z-index:1000;
-  padding:0 clamp(1.5rem,5vw,4rem); height:68px;
-  display:flex; align-items:center; justify-content:space-between;
-  background:rgba(14,12,10,0.93);
-  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(201,168,76,0.12);
-  transition:box-shadow 0.3s;
-}
-.nav-brand { font-family:var(--serif); font-size:1.1rem; font-weight:700; color:var(--gold); text-decoration:none; letter-spacing:0.03em; }
-.nav-links { display:flex; list-style:none; gap:2.2rem; align-items:center; }
-.nav-links a { font-family:var(--mono); font-size:0.67rem; letter-spacing:0.14em; text-transform:uppercase; color:rgba(245,240,232,0.6); text-decoration:none; transition:color 0.2s; position:relative; }
-.nav-links a::after { content:''; position:absolute; bottom:-3px; left:0; width:0; height:1px; background:var(--gold); transition:width 0.3s; }
-.nav-links a:hover, .nav-links a.active { color:var(--gold); }
-.nav-links a:hover::after, .nav-links a.active::after { width:100%; }
-.hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
-.hamburger span { display:block; width:24px; height:2px; background:var(--gold); transition:all 0.3s; }
-.hamburger.active span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
-.hamburger.active span:nth-child(2) { opacity:0; }
-.hamburger.active span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
-.mobile-menu { display:none; position:fixed; inset:68px 0 0 0; background:rgba(14,12,10,0.97); z-index:999; flex-direction:column; align-items:center; justify-content:center; gap:2.5rem; }
-.mobile-menu.open { display:flex; }
-.mobile-menu a { font-family:var(--serif); font-size:2rem; color:var(--paper); text-decoration:none; transition:color 0.2s; }
-.mobile-menu a:hover { color:var(--gold); }
-
-/* ═══ PAGE HEADER ═══ */
-.page-header {
-  background:var(--ink);
-  padding:clamp(7rem,12vw,10rem) clamp(1.5rem,6vw,5rem) clamp(3.5rem,6vw,5rem);
-  position:relative; overflow:hidden;
-  text-align:center;
-}
-.page-header::before {
-  content:''; position:absolute;
-  width:600px; height:600px; border-radius:50%;
-  border:1px solid rgba(201,168,76,0.06);
-  top:-200px; left:50%; transform:translateX(-50%);
-  animation:slowSpin 60s linear infinite;
-}
-/* Decorative running text strip */
-.ticker-wrap {
-  position:absolute; bottom:0; left:0; right:0;
-  overflow:hidden; height:36px;
-  border-top:1px solid rgba(201,168,76,0.08);
-  background:rgba(201,168,76,0.03);
-}
-.ticker {
-  display:flex; gap:3rem; white-space:nowrap;
-  animation:ticker 28s linear infinite;
-  height:100%; align-items:center; width:max-content;
-}
-.ticker span {
-  font-family:var(--mono); font-size:0.6rem; letter-spacing:0.18em;
-  text-transform:uppercase; color:rgba(201,168,76,0.3);
-  flex-shrink:0;
-}
-.ticker-dot { color:var(--gold) !important; opacity:0.5; }
-@keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-
-@keyframes slowSpin { to { transform:translateX(-50%) rotate(360deg); } }
-@keyframes riseIn { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
-
-.page-header-inner { position:relative; z-index:2; max-width:700px; margin:0 auto; }
-.page-eyebrow {
-  font-family:var(--mono); font-size:0.67rem; letter-spacing:0.22em;
-  text-transform:uppercase; color:var(--gold); margin-bottom:1.2rem;
-  opacity:0; animation:riseIn 0.8s ease 0.2s forwards;
-}
-.page-header h1 {
-  font-family:var(--serif); font-size:clamp(2.8rem,8vw,6rem);
-  font-weight:900; color:var(--paper); line-height:1.0;
-  opacity:0; animation:riseIn 0.9s ease 0.4s forwards;
-}
-.page-header h1 em { font-style:italic; color:var(--gold); }
-.page-header-sub {
-  font-family:var(--body); font-style:italic;
-  font-size:clamp(1rem,2vw,1.3rem);
-  color:rgba(245,240,232,0.45); margin-top:1rem;
-  opacity:0; animation:riseIn 0.9s ease 0.6s forwards;
-}
-.page-divider {
-  width:50px; height:1px; background:var(--gold);
-  margin:1.8rem auto 0;
-  opacity:0; animation:riseIn 0.8s ease 0.8s forwards;
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-weight:bold;
 }
 
-/* ═══ FILTER BAR ═══ */
-.filter-bar {
-  background:var(--paper);
-  border-bottom:1px solid var(--border);
-  padding:0 clamp(1.5rem,5vw,4rem);
-  position:sticky; top:68px; z-index:100;
-  display:flex; align-items:center; gap:0;
-  overflow-x:auto;
-  scrollbar-width:none;
-}
-.filter-bar::-webkit-scrollbar { display:none; }
-.filter-btn {
-  font-family:var(--mono); font-size:0.65rem; letter-spacing:0.14em;
-  text-transform:uppercase; padding:1.1rem 1.3rem;
-  background:none; border:none; border-bottom:2px solid transparent;
-  color:var(--muted); cursor:pointer; white-space:nowrap;
-  transition:all 0.25s; margin-bottom:-1px;
-}
-.filter-btn:hover { color:var(--ink); }
-.filter-btn.active { color:var(--gold); border-bottom-color:var(--gold); }
-
-/* ═══ MAIN LAYOUT ═══ */
-.blog-layout {
-  max-width:1200px; margin:0 auto;
-  padding:clamp(3rem,6vw,5rem) clamp(1.5rem,5vw,3rem);
-  display:grid;
-  grid-template-columns:1fr 320px;
-  gap:4rem;
-  align-items:start;
+.container{
+max-width:1000px;
+margin:auto;
+padding:40px 20px;
 }
 
-/* ═══ FEATURED POST ═══ */
-.featured-post {
-  grid-column:1 / -1;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:0;
-  border:1px solid var(--border);
-  border-radius:8px;
-  overflow:hidden;
-  background:var(--paper);
-  transition:box-shadow 0.35s, transform 0.35s;
-  cursor:pointer;
-  margin-bottom:0.5rem;
-}
-.featured-post:hover { transform:translateY(-4px); box-shadow:0 20px 50px rgba(14,12,10,0.1); }
-
-.featured-visual {
-  background:var(--ink);
-  min-height:380px;
-  position:relative;
-  overflow:hidden;
-  display:flex; align-items:center; justify-content:center;
-}
-.featured-art {
-  width:100%; height:100%; position:absolute; inset:0;
-  display:flex; align-items:center; justify-content:center;
-}
-/* Generative art backgrounds per category */
-.art-ai {
-  background:radial-gradient(ellipse at 30% 50%, rgba(45,106,143,0.4) 0%, transparent 60%),
-             radial-gradient(ellipse at 70% 30%, rgba(201,168,76,0.15) 0%, transparent 50%),
-             var(--ink);
-}
-.art-ai::before {
-  content:'';position:absolute;inset:0;
-  background-image:repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(201,168,76,0.04) 28px, rgba(201,168,76,0.04) 29px),
-                   repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(201,168,76,0.04) 28px, rgba(201,168,76,0.04) 29px);
-}
-.art-story {
-  background:radial-gradient(ellipse at 40% 60%, rgba(122,59,30,0.5) 0%, transparent 55%),
-             radial-gradient(ellipse at 70% 20%, rgba(201,168,76,0.12) 0%, transparent 45%),
-             var(--ink);
-}
-.art-kolkata {
-  background:radial-gradient(ellipse at 50% 50%, rgba(58,107,69,0.45) 0%, transparent 60%),
-             radial-gradient(ellipse at 80% 80%, rgba(201,168,76,0.1) 0%, transparent 40%),
-             var(--ink);
-}
-.art-life {
-  background:radial-gradient(ellipse at 40% 40%, rgba(92,61,122,0.45) 0%, transparent 55%),
-             radial-gradient(ellipse at 70% 70%, rgba(201,168,76,0.1) 0%, transparent 40%),
-             var(--ink);
+.blog-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
 }
 
-.featured-art-emoji {
-  position:relative; z-index:1;
-  font-size:5rem; opacity:0.7;
-  filter:drop-shadow(0 0 30px rgba(201,168,76,0.3));
-  animation:floatEmoji 4s ease-in-out infinite;
-}
-@keyframes floatEmoji {
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-10px)}
+.card{
+background:white;
+border-radius:8px;
+padding:25px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
 }
 
-.featured-label {
-  position:absolute; top:1.2rem; left:1.2rem; z-index:2;
-  font-family:var(--mono); font-size:0.6rem; letter-spacing:0.16em;
-  text-transform:uppercase; padding:0.35rem 0.8rem;
-  background:var(--gold); color:var(--ink); border-radius:2px;
+.card:hover{
+transform:translateY(-5px);
 }
 
-.featured-content { padding:3rem; display:flex; flex-direction:column; justify-content:center; }
-.post-category { display:inline-block; font-family:var(--mono); font-size:0.62rem; letter-spacing:0.16em; text-transform:uppercase; margin-bottom:0.9rem; }
-.cat-ai    { color:var(--cat-ai); }
-.cat-story { color:var(--cat-story); }
-.cat-kolkata { color:var(--cat-kol); }
-.cat-life  { color:var(--cat-life); }
-
-.featured-content h2 {
-  font-family:var(--serif); font-size:clamp(1.6rem,3.5vw,2.4rem);
-  font-weight:700; line-height:1.18; margin-bottom:1rem;
-}
-.featured-content p { color:var(--muted); font-size:1.05rem; margin-bottom:1.5rem; line-height:1.7; }
-.post-meta { display:flex; align-items:center; gap:1.2rem; flex-wrap:wrap; }
-.post-date { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.1em; color:var(--muted-lt); }
-.read-time { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.1em; color:var(--muted-lt); }
-.read-time::before { content:'·'; margin-right:1.2rem; }
-.read-more {
-  display:inline-flex; align-items:center; gap:0.5rem;
-  font-family:var(--mono); font-size:0.65rem; letter-spacing:0.12em;
-  text-transform:uppercase; color:var(--gold); text-decoration:none;
-  margin-left:auto; transition:gap 0.25s;
-  background:none; border:none; cursor:pointer; padding:0;
-}
-.read-more:hover { gap:0.9rem; }
-
-/* ═══ POSTS GRID ═══ */
-.posts-section h3 {
-  font-family:var(--mono); font-size:0.66rem; letter-spacing:0.2em;
-  text-transform:uppercase; color:var(--muted); margin-bottom:1.8rem;
-  padding-bottom:0.8rem; border-bottom:1px solid var(--border);
-  display:flex; align-items:center; gap:0.7rem;
-}
-.posts-section h3::before { content:''; display:inline-block; width:20px; height:1px; background:var(--gold); }
-
-.posts-grid { display:flex; flex-direction:column; gap:0; }
-
-.post-card {
-  display:grid; grid-template-columns:auto 1fr;
-  gap:0; border-bottom:1px solid var(--border);
-  padding:1.8rem 0;
-  cursor:pointer;
-  transition:background 0.2s;
-  position:relative;
-}
-.post-card:first-child { border-top:none; }
-.post-card::before {
-  content:''; position:absolute; left:0; top:0; bottom:0;
-  width:0; background:var(--gold-dim);
-  transition:width 0.3s ease;
-}
-.post-card:hover::before { width:3px; }
-.post-card:hover { background:rgba(201,168,76,0.03); }
-
-.post-num {
-  font-family:var(--serif); font-size:1rem; font-weight:700;
-  color:rgba(201,168,76,0.2); width:3rem; padding-top:0.2rem;
-  font-style:italic; flex-shrink:0;
+.card h2{
+margin-top:0;
 }
 
-.post-body { flex:1; }
-.post-card-category { display:inline-block; font-family:var(--mono); font-size:0.58rem; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.5rem; }
-.post-card h4 { font-family:var(--serif); font-size:1.25rem; font-weight:700; line-height:1.25; margin-bottom:0.5rem; transition:color 0.2s; }
-.post-card:hover h4 { color:var(--gold); }
-.post-card p { color:var(--muted); font-size:0.95rem; line-height:1.6; margin-bottom:0.8rem; }
-.post-foot { display:flex; align-items:center; gap:1rem; }
-.post-tag {
-  font-family:var(--mono); font-size:0.58rem; letter-spacing:0.12em;
-  text-transform:uppercase; padding:0.2rem 0.55rem;
-  background:var(--gold-dim); color:var(--gold); border-radius:2px;
+.card a{
+text-decoration:none;
+color:#000;
 }
 
-/* ═══ SIDEBAR ═══ */
-.sidebar { display:flex; flex-direction:column; gap:2.5rem; }
-
-.sidebar-widget {
-  background:var(--paper);
-  border:1px solid var(--border);
-  border-radius:6px; padding:1.8rem;
-}
-.widget-title {
-  font-family:var(--mono); font-size:0.65rem; letter-spacing:0.18em;
-  text-transform:uppercase; color:var(--muted);
-  margin-bottom:1.4rem; padding-bottom:0.8rem;
-  border-bottom:1px solid var(--border);
-  display:flex; align-items:center; gap:0.6rem;
-}
-.widget-title::before { content:''; display:inline-block; width:16px; height:1px; background:var(--gold); }
-
-/* About widget */
-.about-widget-text { font-size:0.95rem; color:var(--muted); line-height:1.65; margin-bottom:1.2rem; }
-.about-widget-link {
-  display:inline-flex; align-items:center; gap:0.5rem;
-  font-family:var(--mono); font-size:0.62rem; letter-spacing:0.1em;
-  text-transform:uppercase; color:var(--gold); text-decoration:none;
-  transition:gap 0.25s;
-}
-.about-widget-link:hover { gap:0.85rem; }
-
-/* Topics widget */
-.topic-list { display:flex; flex-wrap:wrap; gap:0.6rem; }
-.topic-pill {
-  font-family:var(--mono); font-size:0.6rem; letter-spacing:0.1em;
-  text-transform:uppercase; padding:0.35rem 0.75rem;
-  border:1px solid var(--border); border-radius:20px;
-  color:var(--muted); cursor:pointer; transition:all 0.2s;
-  background:none;
-}
-.topic-pill:hover { border-color:var(--gold); color:var(--gold); background:var(--gold-dim); }
-
-/* Quote widget */
-.quote-widget {
-  background:var(--ink);
-  border:none;
-}
-.quote-widget .widget-title { color:rgba(245,240,232,0.3); border-bottom-color:rgba(201,168,76,0.1); }
-.quote-mark { font-family:var(--serif); font-size:4rem; line-height:1; color:rgba(201,168,76,0.2); margin-bottom:-1rem; }
-.quote-text { font-family:var(--body); font-style:italic; font-size:1.1rem; color:rgba(245,240,232,0.75); line-height:1.65; margin-bottom:0.8rem; }
-.quote-author { font-family:var(--mono); font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:rgba(201,168,76,0.5); }
-
-/* Recent widget */
-.recent-list { display:flex; flex-direction:column; gap:1.2rem; }
-.recent-item { display:flex; flex-direction:column; gap:0.2rem; cursor:pointer; padding-bottom:1.2rem; border-bottom:1px solid var(--border); }
-.recent-item:last-child { border-bottom:none; padding-bottom:0; }
-.recent-item-title { font-family:var(--serif); font-size:1rem; font-weight:700; line-height:1.3; transition:color 0.2s; }
-.recent-item:hover .recent-item-title { color:var(--gold); }
-.recent-item-meta { font-family:var(--mono); font-size:0.58rem; letter-spacing:0.1em; color:var(--muted-lt); }
-
-/* Newsletter widget */
-.newsletter-widget { background:linear-gradient(135deg, rgba(201,168,76,0.08) 0%, transparent 100%); border-color:rgba(201,168,76,0.2); }
-.newsletter-desc { font-size:0.95rem; color:var(--muted); margin-bottom:1.2rem; line-height:1.6; }
-.newsletter-form { display:flex; flex-direction:column; gap:0.7rem; }
-.newsletter-input {
-  padding:0.7rem 1rem;
-  background:var(--cream); border:1px solid var(--border);
-  border-radius:3px; font-family:var(--body); font-size:0.95rem;
-  color:var(--ink); outline:none; transition:border-color 0.2s;
-  width:100%;
-}
-.newsletter-input::placeholder { color:var(--muted-lt); }
-.newsletter-input:focus { border-color:var(--gold); }
-.newsletter-btn {
-  padding:0.75rem 1.2rem;
-  background:var(--gold); color:var(--ink);
-  font-family:var(--mono); font-size:0.65rem; letter-spacing:0.12em;
-  text-transform:uppercase; border:none; border-radius:3px;
-  cursor:pointer; transition:all 0.25s; width:100%;
-}
-.newsletter-btn:hover { background:var(--gold-lt); }
-
-/* ═══ LOAD MORE ═══ */
-.load-more-wrap { text-align:center; padding:3rem 0 1rem; grid-column:1; }
-.load-more-btn {
-  display:inline-flex; align-items:center; gap:0.7rem;
-  padding:0.9rem 2.2rem; border:1px solid rgba(14,12,10,0.2);
-  background:none; font-family:var(--mono); font-size:0.68rem;
-  letter-spacing:0.12em; text-transform:uppercase;
-  color:var(--muted); cursor:pointer; border-radius:2px;
-  transition:all 0.25s;
-}
-.load-more-btn:hover { border-color:var(--gold); color:var(--gold); }
-
-/* ═══ ARTICLE OVERLAY (reader) ═══ */
-.article-overlay {
-  position:fixed; inset:0; z-index:2000;
-  background:var(--cream);
-  overflow-y:auto;
-  display:none;
-  animation:slideUp 0.35s ease;
-}
-.article-overlay.open { display:block; }
-@keyframes slideUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
-
-.article-bar {
-  position:sticky; top:0; z-index:10;
-  background:rgba(250,247,242,0.92);
-  backdrop-filter:blur(12px);
-  padding:0 clamp(1.5rem,5vw,4rem);
-  height:60px;
-  display:flex; align-items:center; justify-content:space-between;
-  border-bottom:1px solid var(--border);
-}
-.back-btn {
-  display:inline-flex; align-items:center; gap:0.6rem;
-  font-family:var(--mono); font-size:0.65rem; letter-spacing:0.12em;
-  text-transform:uppercase; color:var(--muted);
-  background:none; border:none; cursor:pointer; transition:color 0.2s;
-}
-.back-btn:hover { color:var(--gold); }
-.progress-bar {
-  position:absolute; bottom:0; left:0; height:2px;
-  background:var(--gold); width:0%;
-  transition:width 0.1s linear;
+.card a:hover{
+color:#ff6600;
 }
 
-.article-content {
-  max-width:680px; margin:0 auto;
-  padding:clamp(3rem,6vw,5rem) clamp(1.5rem,5vw,3rem) clamp(4rem,8vw,7rem);
-}
-.article-content .post-category { font-size:0.68rem; margin-bottom:1rem; }
-.article-content h1 {
-  font-family:var(--serif); font-size:clamp(2rem,5vw,3.2rem);
-  font-weight:900; line-height:1.12; margin-bottom:1.2rem;
-}
-.article-meta { display:flex; align-items:center; gap:1.2rem; flex-wrap:wrap; margin-bottom:2.5rem; padding-bottom:2rem; border-bottom:1px solid var(--border); }
-.article-meta .post-date, .article-meta .read-time { font-size:0.68rem; }
-.article-meta .read-time::before { content:'·'; margin-right:1.2rem; }
-
-.article-body { font-size:1.15rem; line-height:1.85; color:#2a2622; }
-.article-body p { margin-bottom:1.6rem; }
-.article-body h2 { font-family:var(--serif); font-size:1.6rem; font-weight:700; margin:2.5rem 0 1rem; }
-.article-body h3 { font-family:var(--serif); font-size:1.25rem; font-weight:700; margin:2rem 0 0.8rem; }
-.article-body blockquote {
-  border-left:2px solid var(--gold); padding:1rem 1.5rem;
-  margin:2rem 0; background:rgba(201,168,76,0.05);
-  font-style:italic; font-size:1.2rem;
-}
-.article-body strong { font-weight:600; color:var(--ink); }
-.article-body em { font-style:italic; color:var(--muted); }
-
-.article-footer {
-  margin-top:3rem; padding-top:2rem;
-  border-top:1px solid var(--border);
-  display:flex; flex-wrap:wrap; gap:0.6rem;
-}
-.article-tag {
-  font-family:var(--mono); font-size:0.6rem; letter-spacing:0.12em;
-  text-transform:uppercase; padding:0.3rem 0.7rem;
-  border:1px solid var(--border); border-radius:20px; color:var(--muted);
+footer{
+text-align:center;
+padding:30px;
+background:#111;
+color:white;
+margin-top:40px;
 }
 
-/* ═══ FOOTER ═══ */
-footer {
-  background:var(--ink);
-  padding:2rem clamp(1.5rem,5vw,4rem);
-  display:flex; align-items:center; justify-content:space-between;
-  flex-wrap:wrap; gap:1rem;
-  border-top:1px solid rgba(201,168,76,0.08);
-}
-.footer-brand { font-family:var(--serif); font-size:1rem; color:var(--gold); text-decoration:none; }
-.footer-nav { display:flex; gap:1.8rem; list-style:none; }
-.footer-nav a { font-family:var(--mono); font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,240,232,0.3); text-decoration:none; transition:color 0.2s; }
-.footer-nav a:hover { color:var(--gold); }
-.footer-copy { font-family:var(--mono); font-size:0.6rem; letter-spacing:0.1em; color:rgba(245,240,232,0.2); }
-
-/* ═══ REVEAL ═══ */
-.reveal { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease; }
-.reveal.visible { opacity:1; transform:translateY(0); }
-
-/* ═══ HIDDEN POSTS (filter) ═══ */
-.post-card.hidden, .featured-post.hidden { display:none; }
-
-/* ═══ RESPONSIVE ═══ */
-@media(max-width:960px) {
-  .blog-layout { grid-template-columns:1fr; }
-  .sidebar { order:3; }
-  .featured-post { grid-template-columns:1fr; }
-  .featured-visual { min-height:240px; }
-}
-@media(max-width:640px) {
-  .nav-links { display:none; }
-  .hamburger { display:flex; }
-  footer { flex-direction:column; text-align:center; }
-  .footer-nav { justify-content:center; }
-  .post-card { grid-template-columns:1fr; }
-  .post-num { display:none; }
-}
 </style>
+
 </head>
+
 <body>
 
-<!-- NAV -->
 <header>
-  <nav aria-label="Main navigation">
-    <a href="index.html" class="nav-brand">Subir Goswami</a>
-    <ul class="nav-links" role="list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#projects">Work</a></li>
-      <li><a href="blog.html" class="active">Blog</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+
+<h1>Subir Goswami</h1>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="blog.html">Blog</a>
+<a href="index.html#about">About</a>
+<a href="index.html#contact">Contact</a>
+</nav>
+
 </header>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="index.html#about">About</a>
-  <a href="index.html#projects">Work</a>
-  <a href="blog.html">Blog</a>
-  <a href="index.html#contact">Contact</a>
+<div class="container">
+
+<h2>Blog</h2>
+
+<p>
+Ideas about storytelling, artificial intelligence, entrepreneurship,
+and building modern digital projects.
+</p>
+
+<div class="blog-grid">
+
+<div class="card">
+
+<h2>
+<a href="blog/first-post.html">
+My First Blog Post
+</a>
+</h2>
+
+<p>
+Welcome to my blog where I explore ideas about AI,
+creativity, and storytelling.
+</p>
+
+<p><i>March 2026</i></p>
+
 </div>
 
-<!-- PAGE HEADER -->
-<div class="page-header">
-  <div class="page-header-inner">
-    <p class="page-eyebrow">Writing & Thoughts</p>
-    <h1>The <em>Journal</em></h1>
-    <p class="page-header-sub">Ideas on AI, storytelling & the soul of Kolkata — written from the banks of the Hooghly.</p>
-    <div class="page-divider"></div>
-  </div>
-  <div class="ticker-wrap" aria-hidden="true">
-    <div class="ticker">
-      <span>Artificial Intelligence</span><span class="ticker-dot">✦</span>
-      <span>Storytelling</span><span class="ticker-dot">✦</span>
-      <span>Kolkata</span><span class="ticker-dot">✦</span>
-      <span>Literature</span><span class="ticker-dot">✦</span>
-      <span>Entrepreneurship</span><span class="ticker-dot">✦</span>
-      <span>Technology & Humanity</span><span class="ticker-dot">✦</span>
-      <span>KaliNova AI</span><span class="ticker-dot">✦</span>
-      <span>The Hooghly</span><span class="ticker-dot">✦</span>
-      <span>Creativity</span><span class="ticker-dot">✦</span>
-      <span>Artificial Intelligence</span><span class="ticker-dot">✦</span>
-      <span>Storytelling</span><span class="ticker-dot">✦</span>
-      <span>Kolkata</span><span class="ticker-dot">✦</span>
-      <span>Literature</span><span class="ticker-dot">✦</span>
-      <span>Entrepreneurship</span><span class="ticker-dot">✦</span>
-      <span>Technology & Humanity</span><span class="ticker-dot">✦</span>
-      <span>KaliNova AI</span><span class="ticker-dot">✦</span>
-      <span>The Hooghly</span><span class="ticker-dot">✦</span>
-      <span>Creativity</span><span class="ticker-dot">✦</span>
-    </div>
-  </div>
+
+<div class="card">
+
+<h2>
+<a href="blog/ai-storytelling.html">
+AI and the Future of Storytelling
+</a>
+</h2>
+
+<p>
+How artificial intelligence may transform
+the way stories are written and experienced.
+</p>
+
+<p><i>Coming Soon</i></p>
+
 </div>
 
-<!-- FILTER BAR -->
-<div class="filter-bar" role="navigation" aria-label="Filter articles by category">
-  <button class="filter-btn active" data-filter="all">All Posts</button>
-  <button class="filter-btn" data-filter="ai">Artificial Intelligence</button>
-  <button class="filter-btn" data-filter="story">Storytelling</button>
-  <button class="filter-btn" data-filter="kolkata">Kolkata</button>
-  <button class="filter-btn" data-filter="life">Life & Work</button>
 </div>
 
-<!-- MAIN BLOG LAYOUT -->
-<div class="blog-layout">
+</div>
 
-  <!-- FEATURED POST -->
-  <article class="featured-post reveal" data-category="ai" onclick="openArticle('ai-human-creativity')">
-    <div class="featured-visual">
-      <div class="featured-art art-ai" aria-hidden="true"></div>
-      <div class="featured-art-emoji" aria-hidden="true">🤖</div>
-      <span class="featured-label">Featured</span>
-    </div>
-    <div class="featured-content">
-      <span class="post-category cat-ai">Artificial Intelligence</span>
-      <h2>Can AI Ever Truly Create, or Is It Always Remixing the Human Soul?</h2>
-      <p>Every time I prompt an AI model and watch words appear, I ask myself the same uncomfortable question — is this creation, or is this memory? Somewhere between the training data and the output lies a philosophical chasm we haven't yet mapped.</p>
-      <div class="post-meta">
-        <span class="post-date">February 18, 2026</span>
-        <span class="read-time">7 min read</span>
-        <button class="read-more" aria-label="Read article: Can AI Ever Truly Create">
-          Read Essay
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
-      </div>
-    </div>
-  </article>
-
-  <!-- POSTS COLUMN -->
-  <div>
-    <section class="posts-section">
-      <h3>All Articles</h3>
-      <div class="posts-grid" id="postsGrid">
-
-        <article class="post-card reveal" data-category="kolkata" onclick="openArticle('hooghly-evenings')">
-          <div class="post-num">01</div>
-          <div class="post-body">
-            <span class="post-category cat-kolkata post-card-category">Kolkata</span>
-            <h4>The Hooghly at Dusk — How a River Teaches You to Write</h4>
-            <p>There is a particular quality to the light that falls on the Hooghly at five in the evening. It doesn't illuminate — it confesses. Every writer who has ever sat on Strand Road knows what I mean.</p>
-            <div class="post-foot">
-              <span class="post-date">March 1, 2026</span>
-              <span class="read-time">5 min read</span>
-              <span class="post-tag">Essay</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="post-card reveal" data-category="ai" onclick="openArticle('kalinova-origin')">
-          <div class="post-num">02</div>
-          <div class="post-body">
-            <span class="post-category cat-ai post-card-category">Artificial Intelligence</span>
-            <h4>Why I Named My AI Startup After a Goddess</h4>
-            <p>KaliNova didn't start as a business plan. It started as a question: what does transformation look like when ancient wisdom meets machine intelligence? Kali — goddess of time, change, and power. Nova — new, stellar, explosive.</p>
-            <div class="post-foot">
-              <span class="post-date">February 5, 2026</span>
-              <span class="read-time">6 min read</span>
-              <span class="post-tag">Startup</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="post-card reveal" data-category="story" onclick="openArticle('novel-writing-process')">
-          <div class="post-num">03</div>
-          <div class="post-body">
-            <span class="post-category cat-story post-card-category">Storytelling</span>
-            <h4>How I Wrote My First Novel While Running a Business</h4>
-            <p>Midnight was my only collaborator. While the city slept, I wrote — one hour a night for fourteen months. No outline, no agent, no deadline. Just the story that insisted on being told.</p>
-            <div class="post-foot">
-              <span class="post-date">January 20, 2026</span>
-              <span class="read-time">8 min read</span>
-              <span class="post-tag">Process</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="post-card reveal" data-category="ai" onclick="openArticle('ai-career-accelerator')">
-          <div class="post-num">04</div>
-          <div class="post-body">
-            <span class="post-category cat-ai post-card-category">Artificial Intelligence</span>
-            <h4>What the be10X AI Career Accelerator Actually Taught Me</h4>
-            <p>I walked in expecting tools. I walked out with a completely different mental model of how to think about AI in business. Here's the honest, unfiltered breakdown of what changed for me.</p>
-            <div class="post-foot">
-              <span class="post-date">January 25, 2026</span>
-              <span class="read-time">9 min read</span>
-              <span class="post-tag">Learning</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="post-card reveal" data-category="kolkata" onclick="openArticle('kolkata-cafes')">
-          <div class="post-num">05</div>
-          <div class="post-body">
-            <span class="post-category cat-kolkata post-card-category">Kolkata</span>
-            <h4>Cafe Waterloo, Zero Lounge & the Art of Turning a Venue Into a Story</h4>
-            <p>Branding a restaurant isn't about logos — it's about making people feel something before they even sit down. Here's what three Kolkata venues taught me about narrative, identity, and place.</p>
-            <div class="post-foot">
-              <span class="post-date">December 12, 2025</span>
-              <span class="read-time">6 min read</span>
-              <span class="post-tag">Branding</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="post-card reveal" data-category="story" onclick="openArticle('character-vs-plot')">
-          <div class="post-num">06</div>
-          <div class="post-body">
-            <span class="post-category cat-story post-card-category">Storytelling</span>
-            <h4>Character vs. Plot: The Fight Every Novelist Has With Themselves</h4>
-            <p>My novel had no plot for the first three chapters. It had a woman standing on a bridge watching a barge go by. That was enough — because she was the kind of person whose silences tell you everything.</p>
-            <div class="post-foot">
-              <span class="post-date">November 30, 2025</span>
-              <span class="read-time">5 min read</span>
-              <span class="post-tag">Craft</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="post-card reveal" data-category="life" onclick="openArticle('author-entrepreneur')">
-          <div class="post-num">07</div>
-          <div class="post-body">
-            <span class="post-category cat-life post-card-category">Life & Work</span>
-            <h4>On Being Both an Author and an Entrepreneur — Two Identities, One Brain</h4>
-            <p>People assume you must choose: the contemplative life of a writer, or the aggressive urgency of a founder. I've spent two years proving that assumption wrong — and occasionally right, in the worst ways.</p>
-            <div class="post-foot">
-              <span class="post-date">November 10, 2025</span>
-              <span class="read-time">7 min read</span>
-              <span class="post-tag">Reflection</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="post-card reveal" data-category="ai" onclick="openArticle('ai-writing-tools')">
-          <div class="post-num">08</div>
-          <div class="post-body">
-            <span class="post-category cat-ai post-card-category">Artificial Intelligence</span>
-            <h4>The 5 AI Tools I Actually Use as a Writer and Entrepreneur</h4>
-            <p>Not a sponsored list. Not a generic roundup. These are the tools that genuinely changed how I work — some famous, some obscure — and exactly how I use them without losing my own voice.</p>
-            <div class="post-foot">
-              <span class="post-date">October 22, 2025</span>
-              <span class="read-time">6 min read</span>
-              <span class="post-tag">Tools</span>
-            </div>
-          </div>
-        </article>
-
-      </div><!-- end posts-grid -->
-
-      <div class="load-more-wrap">
-        <button class="load-more-btn" id="loadMoreBtn">
-          Load More
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-        </button>
-      </div>
-    </section>
-  </div>
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-
-    <!-- About -->
-    <div class="sidebar-widget reveal">
-      <p class="widget-title">About the Author</p>
-      <p class="about-widget-text">Subir Goswami is an author, Certified AI-Driven Professional, and digital entrepreneur from Kolkata. He writes about the places where stories and technology meet.</p>
-      <a href="index.html" class="about-widget-link">
-        Full Profile
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-
-    <!-- Topics -->
-    <div class="sidebar-widget reveal">
-      <p class="widget-title">Topics</p>
-      <div class="topic-list">
-        <button class="topic-pill" data-filter="ai">AI & Tech</button>
-        <button class="topic-pill" data-filter="story">Storytelling</button>
-        <button class="topic-pill" data-filter="kolkata">Kolkata</button>
-        <button class="topic-pill" data-filter="life">Life & Work</button>
-        <button class="topic-pill" data-filter="all">Show All</button>
-      </div>
-    </div>
-
-    <!-- Quote -->
-    <div class="sidebar-widget quote-widget reveal">
-      <p class="widget-title" style="color:rgba(245,240,232,0.3);border-bottom-color:rgba(201,168,76,0.1)">Thought</p>
-      <div class="quote-mark" aria-hidden="true">"</div>
-      <p class="quote-text">The city doesn't care about your plot. It only cares about your characters — because it has been making characters for three hundred years.</p>
-      <p class="quote-author">— Subir Goswami, on writing in Kolkata</p>
-    </div>
-
-    <!-- Recent -->
-    <div class="sidebar-widget reveal">
-      <p class="widget-title">Recent Posts</p>
-      <div class="recent-list">
-        <div class="recent-item" onclick="openArticle('hooghly-evenings')">
-          <span class="recent-item-title">The Hooghly at Dusk — How a River Teaches You to Write</span>
-          <span class="recent-item-meta">March 1, 2026 · 5 min</span>
-        </div>
-        <div class="recent-item" onclick="openArticle('ai-career-accelerator')">
-          <span class="recent-item-title">What the be10X AI Career Accelerator Actually Taught Me</span>
-          <span class="recent-item-meta">Jan 25, 2026 · 9 min</span>
-        </div>
-        <div class="recent-item" onclick="openArticle('kalinova-origin')">
-          <span class="recent-item-title">Why I Named My AI Startup After a Goddess</span>
-          <span class="recent-item-meta">Feb 5, 2026 · 6 min</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Newsletter -->
-    <div class="sidebar-widget newsletter-widget reveal">
-      <p class="widget-title">Stay in the Loop</p>
-      <p class="newsletter-desc">New essays on AI, storytelling and Kolkata — delivered when they're ready. No noise.</p>
-      <div class="newsletter-form">
-        <input class="newsletter-input" type="email" placeholder="your@email.com" aria-label="Email address">
-        <button class="newsletter-btn">Subscribe →</button>
-      </div>
-    </div>
-
-  </aside>
-
-</div><!-- end blog-layout -->
-
-<!-- FOOTER -->
 <footer>
-  <a href="index.html" class="footer-brand">Subir Goswami</a>
-  <ul class="footer-nav" role="list">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
-  </ul>
-  <span class="footer-copy">© 2026 · Kolkata, India</span>
+
+<p>Subir Goswami</p>
+
+<p>Author • AI Entrepreneur • Digital Builder</p>
+
+<p>© 2026 Subir Goswami</p>
+
 </footer>
-
-<!-- ARTICLE OVERLAY (reader mode) -->
-<div class="article-overlay" id="articleOverlay" role="dialog" aria-modal="true" aria-label="Article reader">
-  <div class="article-bar">
-    <button class="back-btn" id="backBtn">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-      Back to Journal
-    </button>
-    <div class="progress-bar" id="progressBar"></div>
-  </div>
-  <div class="article-content" id="articleContent">
-    <!-- Injected by JS -->
-  </div>
-</div>
-
-<script>
-/* ═══ HAMBURGER ═══ */
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-hamburger.addEventListener('click', () => {
-  const open = mobileMenu.classList.toggle('open');
-  hamburger.classList.toggle('active');
-  hamburger.setAttribute('aria-expanded', open);
-});
-document.querySelectorAll('.mobile-menu a').forEach(l => l.addEventListener('click', () => {
-  mobileMenu.classList.remove('open');
-  hamburger.classList.remove('active');
-  hamburger.setAttribute('aria-expanded', 'false');
-}));
-
-/* ═══ NAV SHADOW ═══ */
-window.addEventListener('scroll', () => {
-  document.querySelector('nav').style.boxShadow = window.scrollY > 30 ? '0 4px 30px rgba(0,0,0,0.45)' : 'none';
-});
-
-/* ═══ REVEAL ═══ */
-const revealObs = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 70); });
-}, { threshold: 0.08 });
-document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-/* ═══ FILTER ═══ */
-const filterBtns = document.querySelectorAll('.filter-btn, .topic-pill');
-function applyFilter(filter) {
-  // Update active states
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.filter === filter));
-  // Filter cards
-  document.querySelectorAll('.post-card, .featured-post').forEach(card => {
-    const cat = card.dataset.category;
-    const show = filter === 'all' || cat === filter;
-    card.classList.toggle('hidden', !show);
-  });
-}
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => applyFilter(btn.dataset.filter));
-});
-
-/* ═══ LOAD MORE (simulate) ═══ */
-document.getElementById('loadMoreBtn').addEventListener('click', function() {
-  this.textContent = 'All articles loaded ✓';
-  this.disabled = true;
-  this.style.opacity = '0.4';
-  this.style.cursor = 'default';
-});
-
-/* ═══ ARTICLE DATA ═══ */
-const articles = {
-  'ai-human-creativity': {
-    category: 'Artificial Intelligence', catClass: 'cat-ai',
-    title: 'Can AI Ever Truly Create, or Is It Always Remixing the Human Soul?',
-    date: 'February 18, 2026', readTime: '7 min read',
-    tags: ['AI', 'Creativity', 'Philosophy', 'Technology'],
-    body: `
-      <p>Every time I prompt an AI model and watch words appear on my screen, I ask myself the same uncomfortable question — is this creation, or is this memory?</p>
-      <p>The question matters to me personally, as both a writer and an entrepreneur building with AI. When I sit down to write a novel, I am doing something I cannot fully explain. I am reaching into a self that was formed by every book I ever read, every person I ever loved, every evening I ever spent watching the Hooghly go dark. My words are not original in the strict sense — they are the residue of a thousand influences, transformed by some alchemical process I call "voice."</p>
-      <h2>What is the AI doing, exactly?</h2>
-      <p>AI language models are trained on enormous datasets of human-generated text. They learn the statistical relationships between words, phrases, ideas. They become extraordinarily good at predicting what comes next — and in doing so, they produce outputs that can feel creative, surprising, even beautiful.</p>
-      <blockquote>But is prediction the same as imagination? Is pattern completion the same as vision?</blockquote>
-      <p>I don't think so — and yet I'm not entirely sure. Because when I examine my own creative process, I find patterns everywhere. I reach for metaphors I've encountered before. My sentence rhythms echo writers I admire. My emotional intuitions were shaped by stories I consumed long before I began writing them.</p>
-      <h2>The Kolkata Perspective</h2>
-      <p>There is something interesting that happens when you grow up in a city as layered as Kolkata. You absorb centuries of influence — British colonial architecture next to Mughal detail next to Bengali folk art. The city itself is a remix, and yet nobody would say Kolkata is not original. It has a soul that is entirely its own.</p>
-      <p>Perhaps AI creativity is more like a city than like a individual mind. It is not one consciousness having an original thought — it is millions of influences meeting in a new configuration, producing something that did not exist in exactly that form before.</p>
-      <h2>Where I land</h2>
-      <p><strong>AI can produce outputs that are new.</strong> But I am not yet convinced it can produce outputs that are meaningful in the way human creativity is meaningful — rooted in experience, mortality, love, loss. The tragedy and the beauty of human creative work is that it comes from somewhere real. It costs us something.</p>
-      <p>For now, I think the most honest framing is this: AI is the most sophisticated instrument humanity has ever built for working with its own cultural memory. What we do with that instrument is still entirely our responsibility — and our opportunity.</p>
-    `
-  },
-  'hooghly-evenings': {
-    category: 'Kolkata', catClass: 'cat-kolkata',
-    title: 'The Hooghly at Dusk — How a River Teaches You to Write',
-    date: 'March 1, 2026', readTime: '5 min read',
-    tags: ['Kolkata', 'Writing', 'Place', 'Memoir'],
-    body: `
-      <p>There is a particular quality to the light that falls on the Hooghly at five in the evening. It doesn't illuminate — it confesses. Every writer who has ever sat on Strand Road knows what I mean.</p>
-      <p>I have written more on that embankment, in my head, than I have ever written at a desk. The river has a way of removing the noise. Not the physical noise — there is plenty of that, with the ferries and the traffic and the hawkers — but the internal noise. The noise of ambition and comparison and self-consciousness that makes writing so difficult most of the time.</p>
-      <h2>Rivers and Narrative</h2>
-      <p>A river moves in one direction, and it does not apologise for this. It does not stop to reconsider whether it should flow. It simply flows. There is a lesson for storytellers here that took me years to understand: <strong>the story wants to go somewhere. Your job is not to control it. Your job is to not obstruct it.</strong></p>
-      <blockquote>The Hooghly taught me that the best writing flows from observation, not from invention.</blockquote>
-      <p>When I began writing my novel, I spent weeks trying to construct a plot. Timelines, acts, turning points. It was miserable. The story felt dead on the page. Then one evening by the river, I stopped plotting and started watching — a woman across the water, the way she held her dupatta against the wind — and suddenly the character who had been eluding me for weeks arrived, fully formed.</p>
-      <h2>The Discipline of Presence</h2>
-      <p>Writers talk a lot about discipline — the daily word count, the writing schedule, the habit. All of this is real and necessary. But there is another discipline that gets less attention: the discipline of being present enough to notice the material that is constantly available to you.</p>
-      <p>Kolkata is extraordinary raw material. It is a city that has been making stories for three hundred years and shows no sign of stopping. If you walk through it with your eyes open, you cannot help but write.</p>
-    `
-  },
-  'kalinova-origin': {
-    category: 'Artificial Intelligence', catClass: 'cat-ai',
-    title: 'Why I Named My AI Startup After a Goddess',
-    date: 'February 5, 2026', readTime: '6 min read',
-    tags: ['KaliNova AI', 'Startup', 'India', 'Entrepreneurship'],
-    body: `
-      <p>KaliNova didn't start as a business plan. It started as a question: what does transformation look like when ancient wisdom meets machine intelligence?</p>
-      <p>Kali — goddess of time, change, and power. The one who destroys what is no longer needed so that something new can exist. Nova — new, stellar, explosive. The kind of brightness that appears suddenly in the sky.</p>
-      <h2>The Naming</h2>
-      <p>I am from Kolkata — a city named after, and deeply devoted to, Kali. She is not a comfortable goddess. She demands honesty. She destroys illusions. She represents the kind of change that cannot be gentle, because the thing being transformed is too entrenched to yield to anything less than force.</p>
-      <p>When I thought about what AI does to businesses and industries, I kept coming back to this image. AI is not a gentle upgrade. It is a fundamental restructuring of how work gets done, how decisions get made, how value gets created. That is Kali energy, whether we like it or not.</p>
-      <blockquote>I wanted a name that didn't pretend the change was easy. KaliNova doesn't promise comfort — it promises transformation.</blockquote>
-      <h2>What KaliNova Actually Does</h2>
-      <p>At its core, KaliNova is about helping businesses use AI not as a novelty, but as genuine infrastructure. Automation that actually works. Content strategies that scale. Digital systems that compound over time rather than requiring constant manual effort.</p>
-      <p>The insight I keep coming back to: most businesses don't have an AI problem, they have a clarity problem. They don't know what they're actually trying to achieve, so no tool — AI or otherwise — can help them. KaliNova starts there, with clarity, and builds outward.</p>
-    `
-  },
-  'novel-writing-process': {
-    category: 'Storytelling', catClass: 'cat-story',
-    title: 'How I Wrote My First Novel While Running a Business',
-    date: 'January 20, 2026', readTime: '8 min read',
-    tags: ['Writing', 'Process', 'Novel', 'Discipline'],
-    body: `
-      <p>Midnight was my only collaborator. While the city slept, I wrote — one hour a night for fourteen months. No outline, no agent, no deadline. Just the story that insisted on being told.</p>
-      <p>People ask me how I managed it. The honest answer is: barely, and then suddenly. There were months when I wrote almost nothing. Months when the business consumed everything and the novel sat untouched, like a plant I kept forgetting to water but somehow didn't kill.</p>
-      <h2>The Rule I Made</h2>
-      <p>One page. That was the rule. Not a word count, not a chapter — just one page, most nights. Some nights I wrote eight pages. Some nights I wrote a paragraph and deleted half of it. But the commitment to show up, even for one page, kept the story alive in my head during the day when I wasn't writing it.</p>
-      <blockquote>A novel is not written in sessions. It is lived in — continuously, even when you're not at the desk.</blockquote>
-      <h2>What Running a Business Taught Me About Writing</h2>
-      <p>Entrepreneurs are obsessed with feedback loops. You test, you measure, you adjust. Writing a first draft is the opposite of this — you have to resist the impulse to optimise before you've even understood what you're making.</p>
-      <p><strong>The business brain says: improve this now. The writer's brain has to say: keep going and trust that the revision will come.</strong></p>
-      <p>Learning to switch between these modes was the hardest part. I eventually started treating the first draft like a prototype — not precious, just functional. Get the shape down. The quality comes later. That framework, borrowed from the startup world, was what finally freed me to finish.</p>
-    `
-  },
-  'ai-career-accelerator': {
-    category: 'Artificial Intelligence', catClass: 'cat-ai',
-    title: 'What the be10X AI Career Accelerator Actually Taught Me',
-    date: 'January 25, 2026', readTime: '9 min read',
-    tags: ['be10X', 'AI Learning', 'Certification', 'Career'],
-    body: `
-      <p>I walked in expecting tools. I walked out with a completely different mental model of how to think about AI in business and work.</p>
-      <p>The be10X AI Career Accelerator Inner Circle Program is not a tutorial series. It is not "here are ten AI tools you should use." It is, at its best, a structured attempt to rewire how you approach problems — to make AI-first thinking feel natural rather than effortful.</p>
-      <h2>What Actually Changed</h2>
-      <p>Before the program, I used AI tools reactively. Something came up, I'd think "could AI help here?" and sometimes use it, sometimes not. After the program, I started thinking in systems. What tasks in my workflow are repetitive enough to automate? Where does human judgment genuinely add value, versus where am I doing something a model could do better and faster?</p>
-      <blockquote>The most valuable thing the program gave me was not knowledge of specific tools — it was a framework for asking better questions about where AI belongs in my work.</blockquote>
-      <h2>The Certification</h2>
-      <p>Becoming a Certified AI-Driven Professional, recognised by an ISO 9001:2015 certified organisation under the Startup India initiative, meant something to me beyond the credential itself. It was a signal to clients and collaborators that I had invested seriously in understanding this technology — not just as a user, but as someone building with it.</p>
-      <p>In a landscape full of people claiming AI expertise, credentialing matters. Not because a certificate makes you competent — only practice does that — but because it demonstrates commitment and provides a common vocabulary.</p>
-      <h2>My Honest Recommendation</h2>
-      <p>If you are a professional who works in any field that involves communication, strategy, content, or decision-making — which is nearly everyone — investing in structured AI education is one of the highest-return things you can do in 2026. The be10X program is a strong option. But more than the specific program: invest the time. The tools will change. The thinking won't.</p>
-    `
-  },
-  'kolkata-cafes': {
-    category: 'Kolkata', catClass: 'cat-kolkata',
-    title: 'Cafe Waterloo, Zero Lounge & the Art of Turning a Venue Into a Story',
-    date: 'December 12, 2025', readTime: '6 min read',
-    tags: ['Branding', 'Kolkata', 'F&B', 'Storytelling'],
-    body: `
-      <p>Branding a restaurant isn't about logos. It's about making people feel something before they even sit down — before they've tasted the food, before they've seen the menu.</p>
-      <p>Working with Cafe Waterloo, Zero Lounge, and LYL Music Pub taught me that the most powerful thing a venue can have is a clear answer to one question: <strong>what story are we telling, and who is the hero of that story?</strong></p>
-      <h2>The Story Is Never About the Food</h2>
-      <p>This sounds counterintuitive, but the best restaurant brands are never primarily about food. They are about a feeling, an identity, a tribe. Cafe Waterloo is about a certain kind of afternoon — unhurried, slightly nostalgic, intellectually alive. Zero Lounge is about the permission to be present, to let the night happen rather than engineer it.</p>
-      <blockquote>The food is the proof that the story is true. But the story is why people come.</blockquote>
-      <h2>Social Media as Narrative</h2>
-      <p>For all three venues, I approached social media the way a novelist approaches chapter openings: every post had to establish a world, quickly, and make the reader want to stay. Images were chosen for atmosphere, not for food photography perfection. Captions were short but specific — a detail rather than a description.</p>
-      <p>The results were not viral moments. They were slow, steady accumulations of the right audience — people who genuinely felt that the venue was speaking to them, not broadcasting at them. That is the only kind of audience that actually shows up.</p>
-    `
-  },
-  'character-vs-plot': {
-    category: 'Storytelling', catClass: 'cat-story',
-    title: 'Character vs. Plot: The Fight Every Novelist Has With Themselves',
-    date: 'November 30, 2025', readTime: '5 min read',
-    tags: ['Craft', 'Novel', 'Character', 'Writing'],
-    body: `
-      <p>My novel had no plot for the first three chapters. It had a woman standing on a bridge watching a barge go by. That was enough — because she was the kind of person whose silences tell you everything.</p>
-      <p>The fight between character and plot is one of the oldest arguments in fiction writing, and I think it is largely a false dichotomy. But understanding why requires understanding what each term actually means.</p>
-      <h2>Plot is What Characters Do When They Cannot Avoid It</h2>
-      <p>The best plots are not engineered from the outside and then filled with characters. They emerge from the inside — from who these people are, what they need, what they are afraid of, what they are lying to themselves about.</p>
-      <p>When I finally had my main character clearly in my head — her particular way of noticing things, her specific failures of courage — the plot became almost inevitable. She was the kind of person who would do certain things and not others. The story was simply the record of what happened when her nature met circumstances that required her to choose.</p>
-      <blockquote>Character is the river. Plot is the landscape it carves as it flows.</blockquote>
-      <h2>The Practical Advice</h2>
-      <p>If you are stuck on plot, you probably don't know your characters well enough yet. Not their backstory — their psychology. Not what happened to them — how they interpret what happened to them. The gap between event and interpretation is where character lives, and where plot is born.</p>
-      <p>Spend more time with your people before you put them in motion. Ask them the uncomfortable questions. Find the thing they will not admit to themselves. That is your story.</p>
-    `
-  },
-  'author-entrepreneur': {
-    category: 'Life & Work', catClass: 'cat-life',
-    title: 'On Being Both an Author and an Entrepreneur — Two Identities, One Brain',
-    date: 'November 10, 2025', readTime: '7 min read',
-    tags: ['Life', 'Identity', 'Entrepreneurship', 'Writing'],
-    body: `
-      <p>People assume you must choose: the contemplative life of a writer, or the aggressive urgency of a founder. I've spent two years proving that assumption wrong — and occasionally right, in the worst ways.</p>
-      <p>The tension is real. Writing requires a particular quality of sustained attention — a willingness to sit with uncertainty and let meaning arrive slowly. Business requires rapid decision-making, external focus, constant context-switching. These are not naturally compatible modes.</p>
-      <h2>What Each One Gives the Other</h2>
-      <p>What I've found, though, is that the two identities nourish each other in ways I didn't expect. Writing makes me a better entrepreneur because it forces me to be precise with language — to find the word that means the exact thing I'm trying to say, not the approximate thing. In pitches, in proposals, in everything written: precision matters.</p>
-      <p>Entrepreneurship makes me a better writer because it keeps me grounded in the material world — in what people actually need, what they actually struggle with, what they will actually pay attention to. Writers can drift into self-indulgence. Running a business is a reliable antidote.</p>
-      <blockquote>The author gives the entrepreneur imagination. The entrepreneur gives the author urgency.</blockquote>
-      <h2>When It Gets Hard</h2>
-      <p>There are weeks when both worlds make competing demands and I do neither well. The novel doesn't get written. The business doesn't get the focus it needs. I am a mediocre version of both selves simultaneously.</p>
-      <p>I have stopped treating these weeks as failures. They are the cost of living a double life — and on balance, the life is worth it.</p>
-    `
-  },
-  'ai-writing-tools': {
-    category: 'Artificial Intelligence', catClass: 'cat-ai',
-    title: 'The 5 AI Tools I Actually Use as a Writer and Entrepreneur',
-    date: 'October 22, 2025', readTime: '6 min read',
-    tags: ['AI Tools', 'Productivity', 'Writing', 'Workflow'],
-    body: `
-      <p>Not a sponsored list. Not a generic roundup. These are the tools that genuinely changed how I work — some famous, some less so — and exactly how I use them without losing my own voice.</p>
-      <p>The caveat first: no tool replaces thinking. If you use AI to avoid thinking, you will produce AI-flavoured mediocrity. If you use AI to think faster, more broadly, or from more angles, it becomes genuinely powerful.</p>
-      <h2>1. Claude (for thinking with)</h2>
-      <p>I use Claude as a thinking partner more than a writing assistant. I explain ideas I'm working through, and it pushes back, asks clarifying questions, points out where my reasoning is weak. For both the novel and for business strategy, having something to think against — even a machine — is enormously useful.</p>
-      <h2>2. A transcription tool (for capturing)</h2>
-      <p>My best ideas arrive while I'm walking or in the shower, not at my desk. A reliable voice-to-text tool, used habitually, has captured material I would otherwise have lost. The raw transcriptions are not usable — but the seeds are there.</p>
-      <h2>3. Image generation (for mood boarding)</h2>
-      <p>Before I write a scene, I sometimes generate images of how I imagine it looks. Not to use the images for anything — just to externalise the visual world of the story so I can describe it more precisely. It sounds strange, but it works.</p>
-      <h2>4. Automation tools (for the business)</h2>
-      <p>The hours I used to spend on repetitive business tasks — scheduling, standard communications, routine content — are now largely handled by automated workflows. This is the most tangible ROI of AI adoption: time returned to work that actually requires me.</p>
-      <h2>5. Research assistants (for going deep fast)</h2>
-      <p>When a chapter of the novel requires knowledge I don't have — historical context, technical detail, cultural nuance — AI-assisted research gets me to a working understanding far faster than traditional methods. I still verify everything. But the starting point is much further along.</p>
-    `
-  }
-};
-
-/* ═══ OPEN ARTICLE ═══ */
-function openArticle(id) {
-  const a = articles[id];
-  if (!a) return;
-  const content = document.getElementById('articleContent');
-  content.innerHTML = `
-    <span class="post-category ${a.catClass}">${a.category}</span>
-    <h1>${a.title}</h1>
-    <div class="article-meta">
-      <span class="post-date">${a.date}</span>
-      <span class="read-time">${a.readTime}</span>
-    </div>
-    <div class="article-body">${a.body}</div>
-    <div class="article-footer">
-      ${a.tags.map(t => `<span class="article-tag">${t}</span>`).join('')}
-    </div>
-  `;
-  const overlay = document.getElementById('articleOverlay');
-  overlay.classList.add('open');
-  overlay.scrollTop = 0;
-  document.body.style.overflow = 'hidden';
-}
-
-document.getElementById('backBtn').addEventListener('click', () => {
-  document.getElementById('articleOverlay').classList.remove('open');
-  document.body.style.overflow = '';
-});
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    document.getElementById('articleOverlay').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-});
-
-/* ═══ READING PROGRESS BAR ═══ */
-document.getElementById('articleOverlay').addEventListener('scroll', function() {
-  const el = this;
-  const scrolled = el.scrollTop;
-  const total = el.scrollHeight - el.clientHeight;
-  const pct = total > 0 ? (scrolled / total) * 100 : 0;
-  document.getElementById('progressBar').style.width = pct + '%';
-});
-</script>
 
 </body>
 </html>
